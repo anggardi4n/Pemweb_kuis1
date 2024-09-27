@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #498AD7;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #EBF2F7;
+        }
+        tr:hover {
+            background-color: #B2CDE0; /* Warna saat dihover */
+            cursor: pointer;
+        }
+        .click-highlight {
+            background-color: #8BAFCF !important; /* Warna saat diklik */
+        }
+        .bold-text {
+            font-weight: bold; /* Teks tebal */
+        }
+        .italic-text {
+            font-style: italic; /* Teks miring */
+        }
+
+        /* Gaya untuk pop-up */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .popup h3 {
+            margin-top: 0;
+        }
+        .popup button {
+            padding: 10px;
+            background-color: #498AD7;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .popup button:hover {
+            background-color: #498AD7;
+        }
+
+        /* Overlay untuk memblokir tampilan di belakang popup */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Data Mahasiswa</h1>
+
+    <!-- Tabel untuk menampilkan data mahasiswa -->
+    <table id="tabel-mahasiswa">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>NIM</th>
+                <th>Tanggal Lahir</th>
+                <th>Kelas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Ardiana Maheswara</td>
+                <td>2309878</td>
+                <td>2005-10-05</td>
+                <td>3/A</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bhanutedja Al Jabbar</td>
+                <td>2309000</td>
+                <td>2005-01-15</td>
+                <td>3/A</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Kanaya Nirwana</td>
+                <td>2303400</td>
+                <td>2005-12-22</td>
+                <td>3/A</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Nevan Andrew</td>
+                <td>2303790</td>
+                <td>2005-08-22</td>
+                <td>3/A</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Zevanya Auralia</td>
+                <td>2304590</td>
+                <td>2005-10-11</td>
+                <td>3/A</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Popup untuk menampilkan detail mahasiswa -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h3>Detail Mahasiswa</h3>
+        <p id="popup-content"></p>
+        <button onclick="closePopup()">Tutup</button>
+    </div>
+
+    <script src="terakhirnih.js"></script>
+
+</body>
+</html>
